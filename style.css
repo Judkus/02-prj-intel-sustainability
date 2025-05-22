@@ -1,1 +1,150 @@
-/* Add your CSS here */
+/* Intel-branded header background and layout */
+.intel-header {
+  /* Intel blue background */
+  background-color: #0071c5; /* Intel's signature blue */
+  color: #fff; /* White text for contrast */
+  padding: 40px 0; /* Space above and below */
+  text-align: center; /* Center all content */
+}
+
+/* Container for header content */
+.header-content {
+  max-width: 600px; /* Limit width for readability */
+  margin: 0 auto; /* Center horizontally */
+}
+
+/* Intel logo styling */
+.intel-logo {
+  width: 120px; /* Set logo width */
+  height: auto; /* Keep aspect ratio */
+  margin-bottom: 20px; /* Space below logo */
+}
+
+/* Main headline styling */
+.headline {
+  font-size: 2.5em; /* Large text */
+  margin: 0 0 15px 0; /* Space below headline */
+  font-weight: bold;
+}
+
+/* Subheading styling */
+.subheading {
+  font-size: 1.2em; /* Slightly larger than normal text */
+  margin: 0 0 10px 0;
+  color: #e0f0ff; /* Lighter blue for contrast */
+}
+
+/* Use a clean, modern font for the whole page */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; /* Intel uses Segoe UI */
+  background: #f4f8fb; /* Light background for Intel look */
+  margin: 0;
+  color: #222;
+}
+
+/* Timeline section styles for horizontal and vertical layout */
+section {
+  /* Use flexbox for layout */
+  display: flex;
+  flex-direction: row; /* Horizontal by default */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 20px; /* Space between cards */
+  padding: 20px 0;
+  /* Optional: style the scrollbar for better appearance */
+  scrollbar-width: thin;
+  scrollbar-color: #0071c5 #e0f0ff;
+  scroll-snap-type: x mandatory; /* Enable horizontal scroll snap */
+}
+
+/* Each milestone card */
+section > div {
+  background: #fff; /* White card background */
+  color: #222; /* Dark text for readability */
+  border-radius: 12px; /* Slightly more rounded corners */
+  box-shadow: 0 2px 12px rgba(0,113,197,0.08); /* Subtle Intel blue shadow */
+  min-width: 250px;
+  max-width: 250px;
+  flex: 0 0 250px;
+  padding: 20px 18px 18px 18px; /* More padding for a clean look */
+  box-sizing: border-box;
+  transition: transform 0.3s cubic-bezier(0.4,0.2,0.2,1),
+              box-shadow 0.3s cubic-bezier(0.4,0.2,0.2,1),
+              background 0.3s;
+  border: 1px solid #e0f0ff; /* Light blue border */
+  font-size: 1em;
+  scroll-snap-align: start; /* Snap each card to the start of the scroll area */
+}
+
+/* Add a simple hover effect for cards */
+section > div:hover {
+  transform: translateY(-10px) scale(1.04) rotate(-1deg); /* Subtle lift and tilt */
+  box-shadow: 0 8px 32px rgba(0,113,197,0.18), 0 1.5px 8px rgba(0,0,0,0.10);
+  background: #f0f8ff; /* Very light blue highlight */
+}
+
+/* Add a hidden details box inside each card */
+section > div .card-details {
+  display: none; /* Hide by default */
+  background: #e0f0ff; /* Light blue background for details */
+  color: #005792; /* Intel blue text */
+  border-radius: 6px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 0.95em;
+  box-shadow: 0 1px 4px rgba(0,113,197,0.08);
+}
+
+/* Show details on hover */
+section > div:hover .card-details {
+  display: block;
+  animation: fadeInDetails 0.4s;
+}
+
+@keyframes fadeInDetails {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+section > div h2 {
+  color: #0071c5; /* Intel blue for year */
+  font-size: 1.3em;
+  margin: 0 0 6px 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+section > div h3 {
+  color: #005792; /* Slightly darker blue for subheading */
+  font-size: 1.1em;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+section > div img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  margin-top: 4px;
+}
+
+section > div p {
+  font-size: 0.98em;
+  line-height: 1.5;
+  margin: 0;
+  color: #333;
+}
+
+/* Responsive: Stack cards vertically on small screens */
+@media (max-width: 700px) {
+  section {
+    flex-direction: column; /* Stack vertically */
+    gap: 16px;
+    overflow-x: visible; /* No horizontal scroll needed */
+  }
+  section > div {
+    max-width: 100%;
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+}
