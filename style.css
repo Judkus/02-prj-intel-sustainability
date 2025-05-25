@@ -5,6 +5,7 @@
   color: #fff; /* White text for contrast */
   padding: 40px 0; /* Space above and below */
   text-align: center; /* Center all content */
+  margin-top: 10px; /* Space below navbar */
 }
 
 /* Container for header content */
@@ -40,6 +41,43 @@ body {
   background: #f4f8fb; /* Light background for Intel look */
   margin: 0;
   color: #222;
+}
+
+/* Navigation bar styles */
+.navbar {
+  background: #fff;
+  border-bottom: 2px solid #e0f0ff;
+  box-shadow: 0 2px 8px rgba(0,113,197,0.04);
+  padding: 0 0 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+.navbar li {
+  margin: 0;
+}
+.navbar a {
+  display: block;
+  padding: 18px 10px;
+  color: #0071c5;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-bottom 0.2s;
+}
+.navbar a:hover, .navbar a:focus {
+  color: #005792;
+  border-bottom: 2px solid #0071c5;
+  background: #e0f0ff;
 }
 
 /* Timeline section styles for horizontal and vertical layout */
